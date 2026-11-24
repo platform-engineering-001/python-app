@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: flask-ingress
+  namespace: dev 
+  labels:
+    app.kubernetes.io/name: flask-app-ingress
+spec:
+  ingressClassName: nginx    # remember to pass this , otherwise you'll get 404 not found 
+  rules:
+
+  - host: python-app.test.com 
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: flask-svc 
+            port: 
+              number: 80 

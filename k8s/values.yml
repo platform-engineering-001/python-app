@@ -1,0 +1,9 @@
+controller:
+  service:
+    type: LoadBalancer
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
+      service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0cb1615d1e8fe65b4,subnet-0e4aeed0b82ecabab"   
+
+
+# helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx --namespace ingress-nginx --create-namespace -f values.yml

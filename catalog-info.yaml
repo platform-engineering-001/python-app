@@ -1,0 +1,14 @@
+# through this i can use this repo content => python app as a backstage component 
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-app
+  description: A python app to display time named as 
+  # Example for optional annotations
+  annotations:
+    github.com/project-slug: himanshu2oo4/python-app
+    backstage.io/techdocs-ref: dir:.                         # to refer the docs | make sure your folder is named as docs and in the current directory 
+spec:
+  type: service 
+  owner: development          # we'll create this group 
+  lifecycle: experimental
