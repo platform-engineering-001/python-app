@@ -6,7 +6,7 @@ replicaCount: 1
 image:
   repository: himanshu1236/python-app
   pullPolicy: Always 
-  tag: "3eefe88"
+  tag: "ac19f13"
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
