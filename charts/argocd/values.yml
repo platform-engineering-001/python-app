@@ -25,10 +25,14 @@ configs:               # this is required if you want to run using local dns arg
 
   
 server:
-  replicas: 1 
+  replicas: 1
   ingress:
-    annotations: 
-      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     enabled: true
-    ingressClassName: nginx
-    tls: true
+    ingressClassName: alb
+    tls: false
+    annotations:
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/target-type: ip
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+      alb.ingress.kubernetes.io/backend-protocol: HTTP
+      alb.ingress.kubernetes.io/group.name: platform-shared-alb
